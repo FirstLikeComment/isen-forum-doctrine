@@ -1,0 +1,24 @@
+<html>
+	<body>
+		<h1>Forum : <?php echo $forum->getTitle() ?></h1>
+		<form action="/post/add?id=<?php echo $forumId ?>" method="post">
+			Ajouter un post : <br />
+			Auteur : <input type="text" name="author" /><br />
+			Titre : <input type="text" name="title" /><br />
+			Date : <input type="text" name="date" /><br />
+			<textarea type="text" name="content"></textarea><br />
+			<input type="submit" value="Ajouter" />
+		</form>
+		
+		<h2>Listes des posts :</h2>
+		
+		<?php foreach ($forum->getPosts() as $post) { ?>
+		<div>
+			<span><?php echo $post->getTitle() ?> - Le <?php echo $post->getDate() ?> : De <?php echo $post->getAuthor() ?></span><br />
+			<code>
+				<?php echo $post->getContent() ?>
+			</code>
+		</div><br /><br />
+		<?php } ?>
+	</body>
+</html>

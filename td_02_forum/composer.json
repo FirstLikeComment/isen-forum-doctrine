@@ -1,0 +1,11 @@
+{
+    "name": "isen/td_02_forum",
+    "description": "Td du 03/10/2017",
+    "type": "project",
+    "autoload":{
+        "psr-4":{
+            "Isen\\": "src/Isen/"
+        }
+    },
+    "require": {}
+}
